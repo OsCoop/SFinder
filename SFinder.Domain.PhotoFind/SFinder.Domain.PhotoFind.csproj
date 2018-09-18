@@ -8,4 +8,11 @@
     <ProjectReference Include="..\SFinder.Domain.Core\SFinder.Domain.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CommandHandlers\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Commands\" />
+    <Folder Include="ValueObjects\" />
+  </ItemGroup>
+
 </Project>
