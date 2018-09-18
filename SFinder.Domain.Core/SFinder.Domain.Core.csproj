@@ -7,9 +7,12 @@
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="Events\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Commands\" />
     <Folder Include="CommandHandlers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="8.0.100" />
   </ItemGroup>
 
 </Project>
