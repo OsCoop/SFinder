@@ -11,10 +11,7 @@ namespace SFinder.Domain.Core.ValueObjects
             Documento = cpf;
             ValidationResult = new CpfValidation().Validate(this);
         }
-        public override bool IsValid()
-        {
-            return ValidationResult.IsValid;
-        }
+        
         public override string ToString()
         {
             return Documento;

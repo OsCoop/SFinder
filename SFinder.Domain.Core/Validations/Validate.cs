@@ -6,6 +6,13 @@ namespace SFinder.Domain.Core.Validations
     public abstract class Validate : IValidate
     {
         public ValidationResult ValidationResult { get; set; }
-        public abstract bool IsValid();
+        /// <summary>
+        /// Usado para validar quando não precisa de override
+        /// </summary>
+        /// <returns></returns>
+        public virtual bool IsValid()
+        {
+            return ValidationResult?.IsValid ?? false;
+        }
     }
 }

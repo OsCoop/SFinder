@@ -1,18 +1,21 @@
-﻿namespace SFinder.Domain.Core.ValueObjects
-{
-    public class Email
-    {
-        public string Valor { get; private set; }
+﻿using SFinder.Domain.Core.Validations;
+using SFinder.Domain.Core.Validations.Entities;
 
-        public bool NovoEmail(string email)
+namespace SFinder.Domain.Core.ValueObjects
+{
+    public class Email : Validate
+    {
+        public string Endereco { get; private set; }
+
+        public Email(string email)
         {
-            Valor = email;
-            return true;
+            Endereco = email;
+            ValidationResult = new EmailValidation().Validate(this);
         }
 
         public override string ToString()
         {
-            return Valor;
+            return Endereco;
         }
     }
 }
