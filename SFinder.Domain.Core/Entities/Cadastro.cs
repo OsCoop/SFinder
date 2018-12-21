@@ -1,12 +1,10 @@
-﻿using SFinder.Domain.Core.Interfaces.Entities;
-using SFinder.Domain.Core.ValueObjects;
+﻿using SFinder.Domain.Core.ValueObjects;
 using System;
 
 namespace SFinder.Domain.Core.Entities
 {
-    public class Cadastro : ICadastro
+    public class Cadastro : Entity
     {
-        public int Id { get; private set; }
         public Senha Senha { get; private set; }
         public DateTime DataCadastro { get; private set; }
         public DateTime DataExclusao { get; private set; }
@@ -14,6 +12,7 @@ namespace SFinder.Domain.Core.Entities
 
         public Cadastro(Senha senha)
         {
+            // TODO: Cadastro(senha)
             Senha = senha;
             DataCadastro = DateTime.Now;
             Ativo = true;
@@ -21,6 +20,7 @@ namespace SFinder.Domain.Core.Entities
 
         public void InativarCadastro()
         {
+            // TODO: InativarCadastro()
             DataExclusao = DateTime.Now;
             Ativo = false;
         }

@@ -1,14 +1,11 @@
-﻿using SFinder.Domain.Core.Commands;
-using SFinder.Domain.Core.Interfaces.Repository;
+﻿using SFinder.Domain.Core.Entities;
 
 namespace SFinder.Domain.Core.CommandHandlers
 {
-    public abstract class CommandHandler<T, TEntity> where TEntity : class where T : IRepositoryBase<TEntity>
+    public abstract class CommandHandler<TEntity> where TEntity : Entity
     {
-        protected T _repositoryBase { get; private set; }
-        public CommandHandler(T repository)
+        public CommandHandler()
         {
-            _repositoryBase = repository;
         }
     }
 }

@@ -2,7 +2,7 @@
 using SFinder.Domain.Core.ValueObjects;
 using System.Text.RegularExpressions;
 
-namespace SFinder.Domain.Core.Validations.Entities
+namespace SFinder.Domain.Core.Validations.ValueObjects
 {
     public class CpfValidation : AbstractValidator<Cpf>
     {

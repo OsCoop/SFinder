@@ -5,10 +5,9 @@ using Xunit;
 
 namespace SFinder.Domain.Core.Tests.ValueObjects
 {
-    public class CPFTests : BaseTests
+    public class CpfTests : BaseTests
     {
-
-        public CPFTests()
+        public CpfTests()
         {
 
         }

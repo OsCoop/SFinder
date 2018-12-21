@@ -5,10 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
     <Folder Include="Events\" />
     <Folder Include="Commands\" />
-    <Folder Include="CommandHandlers\" />
+    <Folder Include="Interfaces\Entities\" />
+    <Folder Include="Validations\Entities\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,5 +1,5 @@
 ﻿using SFinder.Domain.Core.Validations;
-using SFinder.Domain.Core.Validations.Entities;
+using SFinder.Domain.Core.Validations.ValueObjects;
 
 namespace SFinder.Domain.Core.ValueObjects
 {

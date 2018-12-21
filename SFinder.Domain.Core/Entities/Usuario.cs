@@ -1,5 +1,4 @@
-﻿using SFinder.Domain.Core.Interfaces.Entities;
-using SFinder.Domain.Core.ValueObjects;
+﻿using SFinder.Domain.Core.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,9 +6,8 @@ using System.Linq;
 
 namespace SFinder.Domain.Core.Entities
 {
-    public class Usuario : IUser
+    public abstract class Usuario : Entity
     {
-        public int Id { get; private set; }
         public string Nome { get; private set; }
         public string Sobrenome { get; private set; }
         public Email Email { get; private set; }
@@ -18,6 +16,9 @@ namespace SFinder.Domain.Core.Entities
 
         private Collection<Cadastro> _cadastros { get; set; }
         public IReadOnlyCollection<Cadastro> Cadastros { get { return _cadastros; } }
+
+        private Collection<Endereco> _enderecos { get; set; }
+        public IReadOnlyCollection<Endereco> Enderecos { get { return _enderecos; } }
 
         public Usuario(string nome, string sobrenome, Email email, Cpf cpf, DateTime dataNascimento)
         {
@@ -28,6 +29,7 @@ namespace SFinder.Domain.Core.Entities
             DataNascimento = dataNascimento;
         }
 
+        #region Cadastro
         public bool TemCadastroAtivo()
         {
             var retorno = Cadastros.Any(x => x.Ativo);
@@ -36,14 +38,38 @@ namespace SFinder.Domain.Core.Entities
 
         public void CriarNovoCadastro(Cadastro cadastro)
         {
-            if (!TemCadastroAtivo())
-                _cadastros.Add(cadastro);
+            // TODO: CriarNovoCadastro
+            throw new NotImplementedException();
         }
 
+        public void AtualizarCadastro(Cadastro cadastro)
+        {
+            // TODO: AtualizarCadastro
+            throw new NotImplementedException();
+        }
+        #endregion
+
+        #region Endereco
+        public void CriarNovoEndereco(Endereco cadastro)
+        {
+            // TODO: CriarNovoEndereco
+            throw new NotImplementedException();
+        }
+
+        public void AtualizarEndereco(Endereco cadastro)
+        {
+            // TODO: AtualizarEndereco
+            throw new NotImplementedException();
+        }
+        #endregion
+
+        #region Rating
         public void Rate(Rating rating)
         {
             // TODO: Rate
             throw new NotImplementedException();
         }
+
+        #endregion
     }
 }

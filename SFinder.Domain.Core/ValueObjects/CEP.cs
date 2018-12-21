@@ -3,19 +3,19 @@ using SFinder.Domain.Core.Validations.ValueObjects;
 
 namespace SFinder.Domain.Core.ValueObjects
 {
-    public class Senha : Validate
+    public class Cep : Validate
     {
-        public string Valor { get; set; }
-        public Senha(string senha)
+        public string Valor { get; private set; }
+
+        public Cep(string valor)
         {
-            Valor = senha;
-            ValidationResult = new SenhaValidation().Validate(this);
+            Valor = valor;
+            ValidationResult = new CepValidation().Validate(this);
         }
 
         public override string ToString()
         {
             return Valor;
         }
-
     }
 }

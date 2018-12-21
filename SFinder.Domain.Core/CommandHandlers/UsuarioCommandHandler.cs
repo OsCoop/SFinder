@@ -1,33 +1,38 @@
-﻿using System;
-using SFinder.Domain.Core.Commands;
+﻿using SFinder.Domain.Core.Commands;
 using SFinder.Domain.Core.Entities;
-using SFinder.Domain.Core.Interfaces.Entities;
 using SFinder.Domain.Core.Interfaces.Repository;
 
 namespace SFinder.Domain.Core.CommandHandlers
 {
-    public class RegistrarNovoUsuarioCommandHandler : CommandHandler<IUsuarioRepository, Usuario>, ICommandHandler<RegistrarNovoUsuarioCommand>
+    public class UsuarioCommandHandler : CommandHandler<Usuario>
     {
-        public RegistrarNovoUsuarioCommandHandler(IUsuarioRepository repository) : base(repository)
+        private readonly IUsuarioRepository _usuarioRepository;
+        public UsuarioCommandHandler(IUsuarioRepository usuarioRepository)
         {
+            _usuarioRepository = usuarioRepository;
         }
 
         public void Handle(RegistrarNovoUsuarioCommand command)
         {
+            if (!command.IsValid())
+            {
+
+            }
+
             Cadastro cadastro = new Cadastro(command.Senha);
             Usuario usuario = new Usuario(command.Nome, command.Sobrenome, command.Email, command.CPF, command.DataNascimento);
 
             usuario.CriarNovoCadastro(cadastro);
 
-            var usuarioBase = _repositoryBase.ObtemPorCPF();
+            var usuarioBase = _usuarioRepository.ObtemPorCPF();
             if (usuario == null)
             {
 
             }
 
             //TODO: UoW
-            _repositoryBase.Add(usuario);
-            _repositoryBase.SaveChanges();
+            _usuarioRepository.Add(usuario);
+            _usuarioRepository.SaveChanges();
         }
 
     }

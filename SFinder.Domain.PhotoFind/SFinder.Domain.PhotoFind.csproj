@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="CommandHandlers\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Commands\" />
     <Folder Include="ValueObjects\" />
   </ItemGroup>

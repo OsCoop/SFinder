@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using SFinder.Domain.Core.ValueObjects;
 
-namespace SFinder.Domain.Core.Validations.Entities
+namespace SFinder.Domain.Core.Validations.ValueObjects
 {
     public class EmailValidation : AbstractValidator<Email>
     {
